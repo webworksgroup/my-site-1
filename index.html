@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apeks Agency | Elite OnlyFans Management</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,700;0,800;0,900;1,700&family=Outfit:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: #050505;
+            color: #e5e5e5;
+            scroll-behavior: smooth;
+        }
+        .heading-font {
+            font-family: 'Montserrat', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: -0.02em;
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #fff 30%, #a78bfa 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .glass-card {
+            background: rgba(15, 10, 25, 0.4);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(167, 139, 250, 0.1);
+        }
+        .cta-button {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            font-family: 'Montserrat', sans-serif;
+        }
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px -10px rgba(139, 92, 246, 0.5);
+        }
+        /* FAQ Styles */
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .faq-item.active .faq-answer {
+            max-height: 250px;
+        }
+        .faq-item.active .faq-icon {
+            transform: rotate(45deg);
+            color: #a78bfa;
+        }
+        .purple-glow {
+            background: radial-gradient(circle at center, rgba(139, 92, 246, 0.08) 0%, transparent 70%);
+        }
+        .step-number {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1;
+            color: #a78bfa;
+            opacity: 0.3; 
+            text-shadow: 0 0 15px rgba(167, 139, 250, 0.4);
+            transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+        .step-card:hover .step-number {
+            opacity: 1;
+            text-shadow: 0 0 30px rgba(167, 139, 250, 0.8);
+            transform: translate(-50%, -15px) scale(1.1);
+        }
+        .brand-glow {
+            color: #a78bfa;
+            text-shadow: 0 0 10px rgba(167, 139, 250, 0.6);
+        }
+        .form-label-elite {
+            display: block;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 13px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            margin-bottom: 0.75rem;
+            color: #1a1a1a;
+        }
+        .input-elite {
+            width: 100%;
+            padding: 1.25rem;
+            border: 1px solid #e5e7eb;
+            font-size: 1rem;
+            color: #1a1a1a;
+            outline: none;
+            transition: all 0.3s ease;
+            border-radius: 4px;
+        }
+        .input-elite:focus {
+            border-color: #a78bfa;
+            box-shadow: 0 0 0 2px rgba(167, 139, 250, 0.1);
+        }
+        .step-hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-[60] py-5 px-6 md:px-12 flex justify-between items-center bg-black/60 backdrop-blur-xl border-b border-white/5">
+        <div class="text-xl md:text-2xl font-black tracking-tighter heading-font italic brand-glow">APEKS</div>
+        <a href="#apply" class="text-[11px] md:text-sm font-black tracking-[0.35em] uppercase text-violet-300 hover:text-white transition-all border-b border-violet-500/20 hover:border-violet-500 pb-1">Join The Roster</a>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative min-h-screen flex flex-col items-center justify-center text-center px-4 pt-20 overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[900px] bg-violet-900/10 rounded-full blur-[160px]"></div>
+        </div>
+        
+        <div class="relative z-10 max-w-5xl">
+            <div class="inline-flex items-center gap-2 py-2 px-5 mb-8 border border-violet-500/30 rounded-full bg-violet-500/5 backdrop-blur-md">
+                <span class="w-1.5 h-1.5 bg-violet-400 rounded-full animate-pulse shadow-[0_0_8px_rgba(167,139,250,1)]"></span>
+                <span class="text-[10px] uppercase tracking-[0.4em] text-violet-300 font-bold">Currently Accepting 3 New Creators</span>
+            </div>
+            <h1 class="text-5xl md:text-7xl lg:text-9xl font-black mb-8 leading-[0.95] gradient-text heading-font">
+                SCALE TO THE <br>PEAK OF ONLYFANS
+            </h1>
+            <p class="text-lg md:text-2xl text-gray-400 max-w-2xl mx-auto mb-12 leading-relaxed font-light tracking-wide">
+                Apeks Agency transforms creators into elite digital brands. We handle the operations, you own the spotlight.
+            </p>
+            <div class="flex flex-col items-center gap-6">
+                <a href="#apply" class="cta-button bg-white text-black px-12 py-5 rounded-sm font-extrabold text-lg hover:bg-violet-50 uppercase tracking-[0.15em] w-full md:w-auto">
+                    Secure Your Position
+                </a>
+                <p class="text-[10px] text-gray-500 font-bold tracking-[0.3em] uppercase flex flex-wrap justify-center gap-3">
+                    <span>100% Confidential</span> 
+                    <span class="hidden md:inline text-violet-500/50">•</span> 
+                    <span>Global Support</span> 
+                    <span class="hidden md:inline text-violet-500/50">•</span> 
+                    <span>Revenue-Driven</span>
+                </p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Services Section -->
+    <section class="py-32 px-4 bg-[#08070b]">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div>
+                    <h2 class="text-3xl md:text-5xl font-black mb-8 heading-font leading-tight">THE INFRASTRUCTURE <br><span class="text-violet-500">BEHIND THE 0.1%</span></h2>
+                    <p class="text-gray-400 text-lg mb-10 leading-relaxed font-light">Being a top creator is a business, not a hobby. We provide the full-stack management suite that allows you to operate at the highest level without the burnout.</p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex gap-5 group">
+                            <div class="w-12 h-12 shrink-0 rounded-lg bg-violet-500/10 flex items-center justify-center border border-violet-500/20 group-hover:bg-violet-500/20 transition-all">
+                                <svg class="w-6 h-6 text-violet-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white mb-1 uppercase tracking-wider text-sm">Growth & Marketing</h4>
+                                <p class="text-gray-500 text-sm">Aggressive subscriber acquisition across TikTok, Reels, and X.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-5 group">
+                            <div class="w-12 h-12 shrink-0 rounded-lg bg-violet-500/10 flex items-center justify-center border border-violet-500/20 group-hover:bg-violet-500/20 transition-all">
+                                <svg class="w-6 h-6 text-violet-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path></svg>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white mb-1 uppercase tracking-wider text-sm">Elite Chatting & Sales</h4>
+                                <p class="text-gray-500 text-sm">Trained sales professionals handling DMs 24/7 to maximize PPV revenue.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-5 group">
+                            <div class="w-12 h-12 shrink-0 rounded-lg bg-violet-500/10 flex items-center justify-center border border-violet-500/20 group-hover:bg-violet-500/20 transition-all">
+                                <svg class="w-6 h-6 text-violet-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white mb-1 uppercase tracking-wider text-sm">Account Protection</h4>
+                                <p class="text-gray-500 text-sm">Content watermarking, DMCA takedowns, and legal advisory.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative">
+                    <div class="absolute -inset-4 bg-violet-500/20 blur-3xl opacity-30"></div>
+                    <div class="relative glass-card p-8 rounded-2xl border border-white/10">
+                        <div class="flex items-center justify-between mb-10">
+                            <div class="flex items-center gap-3">
+                                <div class="w-3 h-3 bg-red-500 rounded-full"></div>
+                                <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
+                                <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+                            </div>
+                            <div class="text-[10px] text-gray-500 uppercase tracking-widest font-black">Live Performance Tracking</div>
+                        </div>
+                        <div class="space-y-8">
+                            <div class="h-8 bg-white/5 rounded w-3/4"></div>
+                            <div class="grid grid-cols-2 gap-4">
+                                <div class="h-32 bg-violet-500/10 rounded-xl border border-violet-500/20 flex flex-col items-center justify-center">
+                                    <span class="text-violet-400 text-3xl font-black heading-font">312%</span>
+                                    <span class="text-[10px] text-gray-500 uppercase mt-2">Revenue Growth</span>
+                                </div>
+                                <div class="h-32 bg-white/5 rounded-xl border border-white/10 flex flex-col items-center justify-center">
+                                    <span class="text-white text-3xl font-black heading-font">24/7</span>
+                                    <span class="text-[10px] text-gray-500 uppercase mt-2">Response Time</span>
+                                </div>
+                            </div>
+                            <div class="h-24 bg-white/5 rounded-xl border border-white/10 p-4">
+                                <div class="flex justify-between items-center mb-4">
+                                    <div class="w-24 h-2 bg-white/10 rounded"></div>
+                                    <div class="w-12 h-2 bg-violet-500/50 rounded"></div>
+                                </div>
+                                <div class="space-y-2">
+                                    <div class="w-full h-1.5 bg-white/5 rounded"></div>
+                                    <div class="w-5/6 h-1.5 bg-white/5 rounded"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-32 px-4 border-t border-white/5">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl md:text-5xl font-black text-center mb-16 heading-font">Common Inquiries</h2>
+            <div class="space-y-4">
+                <div class="faq-item glass-card rounded-xl overflow-hidden active">
+                    <button onclick="toggleFaq(this)" class="w-full p-6 text-left flex justify-between items-center group">
+                        <span class="font-bold text-lg md:text-xl pr-4">How much do you charge for management?</span>
+                        <span class="faq-icon text-2xl font-light transition-transform duration-300">＋</span>
+                    </button>
+                    <div class="faq-answer px-6 pb-6">
+                        <p class="text-gray-400 leading-relaxed">We operate on a performance-based model. We only take a percentage of the revenue we generate for you. This ensures our interests are perfectly aligned: we don't get paid unless you make more money than you were making before.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item glass-card rounded-xl overflow-hidden">
+                    <button onclick="toggleFaq(this)" class="w-full p-6 text-left flex justify-between items-center group">
+                        <span class="font-bold text-lg md:text-xl pr-4">Will I lose control of my content?</span>
+                        <span class="faq-icon text-2xl font-light transition-transform duration-300">＋</span>
+                    </button>
+                    <div class="faq-answer px-6 pb-6">
+                        <p class="text-gray-400 leading-relaxed">Absolutely not. You retain 100% ownership of your content and brand. We act as your operations and sales team, executing the strategy we agree upon. You have final approval on everything.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item glass-card rounded-xl overflow-hidden">
+                    <button onclick="toggleFaq(this)" class="w-full p-6 text-left flex justify-between items-center group">
+                        <span class="font-bold text-lg md:text-xl pr-4">How do you protect my privacy?</span>
+                        <span class="faq-icon text-2xl font-light transition-transform duration-300">＋</span>
+                    </button>
+                    <div class="faq-answer px-6 pb-6">
+                        <p class="text-gray-400 leading-relaxed">Privacy is our foundation. We use geoblocking to prevent your profile from being seen in specific regions and employ aggressive DMCA takedown services to remove leaked content immediately. Our internal team is bound by strict NDAs.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item glass-card rounded-xl overflow-hidden">
+                    <button onclick="toggleFaq(this)" class="w-full p-6 text-left flex justify-between items-center group">
+                        <span class="font-bold text-lg md:text-xl pr-4">Do I need a large following to start?</span>
+                        <span class="faq-icon text-2xl font-light transition-transform duration-300">＋</span>
+                    </button>
+                    <div class="faq-answer px-6 pb-6">
+                        <p class="text-gray-400 leading-relaxed">While an existing following helps, it is not a requirement. We specialize in building traffic from scratch through our proprietary social media funnel systems. We look for potential and work ethic above all else.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Application Form -->
+    <section id="apply" class="py-32 px-4 bg-white text-black relative">
+        <div class="max-w-4xl mx-auto">
+            <div id="application-container">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-6xl font-black mb-6 heading-font italic">Elite Intake</h2>
+                    <p class="text-gray-500 uppercase tracking-[0.3em] text-[10px] font-black">Limited Roster Openings • Non-Binding Application</p>
+                </div>
+
+                <div class="max-w-xl mx-auto">
+                    <!-- Progress -->
+                    <div class="w-full h-1 bg-gray-100 mb-12 relative">
+                        <div id="form-progress" class="absolute top-0 left-0 h-full bg-black transition-all duration-500" style="width: 33%"></div>
+                    </div>
+
+                    <form id="apeks-form" onsubmit="handleFormSubmit(event)">
+                        <!-- Step 1 -->
+                        <div id="step-1" class="space-y-6">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="form-label-elite">First Name</label>
+                                    <input type="text" name="firstName" required class="input-elite" placeholder="Jane">
+                                </div>
+                                <div>
+                                    <label class="form-label-elite">Last Name</label>
+                                    <input type="text" name="lastName" required class="input-elite" placeholder="Doe">
+                                </div>
+                            </div>
+                            <div>
+                                <label class="form-label-elite">Social Handle (IG/X)</label>
+                                <input type="text" name="instagram" required class="input-elite" placeholder="@username">
+                            </div>
+                            <div>
+                                <label class="form-label-elite">Direct Email</label>
+                                <input type="email" name="email" required class="input-elite" placeholder="jane@example.com">
+                            </div>
+                            <button type="button" onclick="nextStep(2)" class="w-full bg-black text-white py-6 font-black uppercase tracking-[0.2em] hover:bg-zinc-800 transition-colors">Step 02: Stats</button>
+                        </div>
+
+                        <!-- Step 2 -->
+                        <div id="step-2" class="step-hidden space-y-6">
+                            <div>
+                                <label class="form-label-elite">Current Status</label>
+                                <select name="active" required class="input-elite appearance-none bg-white">
+                                    <option value="yes">Active Creator</option>
+                                    <option value="starting">Brand New / Planning</option>
+                                    <option value="returning">Returning to Industry</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="form-label-elite">Average Monthly Revenue</label>
+                                <select name="earnings" class="input-elite appearance-none bg-white">
+                                    <option value="0-1k">$0 - $1,000</option>
+                                    <option value="1k-5k">$1,000 - $5,000</option>
+                                    <option value="5k-15k">$5,000 - $15,000</option>
+                                    <option value="15k-30k">$15,000 - $30,000</option>
+                                    <option value="30k+">$30,000+</option>
+                                </select>
+                            </div>
+                            <div class="flex gap-4">
+                                <button type="button" onclick="nextStep(1)" class="w-1/3 border border-gray-200 py-6 font-black uppercase tracking-[0.2em]">Back</button>
+                                <button type="button" onclick="nextStep(3)" class="w-2/3 bg-black text-white py-6 font-black uppercase tracking-[0.2em]">Step 03: Goals</button>
+                            </div>
+                        </div>
+
+                        <!-- Step 3 -->
+                        <div id="step-3" class="step-hidden space-y-6">
+                            <div>
+                                <label class="form-label-elite">What is your #1 bottleneck?</label>
+                                <textarea name="goal" rows="4" class="input-elite" placeholder="e.g. Traffic, inconsistent chatting, time management..."></textarea>
+                            </div>
+                            <div class="flex items-center gap-3 py-4">
+                                <input type="checkbox" id="nda" required class="w-5 h-5 accent-black">
+                                <label for="nda" class="text-[11px] font-bold text-gray-400 uppercase tracking-widest leading-none cursor-pointer">I understand my data is protected by NDA</label>
+                            </div>
+                            <div class="flex gap-4">
+                                <button type="button" onclick="nextStep(2)" class="w-1/3 border border-gray-200 py-6 font-black uppercase tracking-[0.2em]">Back</button>
+                                <button type="submit" class="w-2/3 bg-black text-white py-6 font-black uppercase tracking-[0.2em] hover:bg-violet-900 transition-colors">Submit Application</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Success -->
+            <div id="success-message" class="hidden text-center py-20">
+                <div class="inline-flex items-center justify-center w-20 h-20 bg-violet-50 rounded-full mb-8">
+                    <svg class="w-8 h-8 text-violet-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                </div>
+                <h2 class="text-4xl md:text-5xl font-black mb-6 heading-font italic">Transmission Received</h2>
+                <p class="text-gray-500 max-w-md mx-auto leading-relaxed">Your application has been logged into our private server. An Apeks agent will reach out via the provided social handle or email within 24 hours.</p>
+                <button onclick="window.location.reload()" class="mt-12 text-[10px] font-black uppercase tracking-[0.4em] border-b-2 border-black pb-1">Return Home</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-20 px-8 flex flex-col md:flex-row justify-between items-center bg-black text-gray-600 text-[10px] uppercase tracking-[0.4em] font-bold border-t border-white/5">
+        <div class="heading-font font-black italic text-3xl mb-8 md:mb-0 brand-glow">APEKS</div>
+        <div class="flex flex-col md:items-end gap-2">
+            <p>© 2024 Apeks Agency. All Rights Reserved.</p>
+            <p class="text-gray-800">Private • Discreet • Professional</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleFaq(button) {
+            const item = button.parentElement;
+            const isActive = item.classList.contains('active');
+            document.querySelectorAll('.faq-item').forEach(el => el.classList.remove('active'));
+            if (!isActive) {
+                item.classList.add('active');
+            }
+        }
+
+        let currentStep = 1;
+        const progressBar = document.getElementById('form-progress');
+
+        function nextStep(step) {
+            if (step > currentStep) {
+                const currentInputs = document.querySelectorAll(`#step-${currentStep} input[required], #step-${currentStep} select[required]`);
+                let valid = true;
+                currentInputs.forEach(input => {
+                    if (!input.value || (input.type === 'checkbox' && !input.checked)) {
+                        input.style.borderColor = "#ef4444";
+                        valid = false;
+                    } else {
+                        input.style.borderColor = "#e5e7eb";
+                    }
+                });
+                if (!valid) return;
+            }
+
+            document.querySelectorAll('[id^="step-"]').forEach(el => el.classList.add('step-hidden'));
+            document.getElementById(`step-${step}`).classList.remove('step-hidden');
+            
+            currentStep = step;
+            const progress = (step / 3) * 100;
+            progressBar.style.width = `${progress}%`;
+            
+            document.getElementById('apply').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            const container = document.getElementById('application-container');
+            container.classList.add('opacity-0');
+            setTimeout(() => {
+                container.style.display = 'none';
+                document.getElementById('success-message').classList.remove('hidden');
+                document.getElementById('success-message').scrollIntoView({ behavior: 'smooth' });
+            }, 500);
+        }
+    </script>
+</body>
+</html>
