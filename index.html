@@ -518,211 +518,194 @@
 
     <!-- SECTION 10: APPLICATION FORM -->
     <section id="apply" class="py-24 md:py-36 px-6 bg-white text-black relative overflow-hidden">
-        <div class="max-w-4xl mx-auto relative z-10">
-            <div id="application-container" class="transition-all duration-500">
-                <div class="text-center mb-16 md:mb-20">
-                    <h2 class="text-5xl md:text-7xl font-black mb-8 md:mb-10 heading-font leading-none">Application</h2>
-                    <p class="text-gray-500 uppercase tracking-[0.3em] text-[11px] md:text-xs font-black">All information is kept strictly confidential</p>
+    <div class="max-w-4xl mx-auto relative z-10">
+        <div id="application-container" class="transition-all duration-500">
+            <div class="text-center mb-16 md:mb-20">
+                <h2 class="text-5xl md:text-7xl font-black mb-8 md:mb-10 heading-font leading-none">Application</h2>
+                <p class="text-gray-500 uppercase tracking-[0.3em] text-[11px] md:text-xs font-black">All information is kept strictly confidential</p>
+            </div>
+
+            <div class="max-w-xl mx-auto">
+                <!-- Progress Bar -->
+                <div class="w-full h-1.5 bg-gray-100 mb-12 md:mb-16 relative overflow-hidden">
+                    <div id="form-progress" class="absolute top-0 left-0 h-full bg-black transition-all duration-500" style="width: 33%"></div>
                 </div>
 
-                <div class="max-w-xl mx-auto">
-                    <!-- Progress Bar -->
-                    <div class="w-full h-1.5 bg-gray-100 mb-12 md:mb-16 relative overflow-hidden">
-                        <div id="form-progress" class="absolute top-0 left-0 h-full bg-black transition-all duration-500" style="width: 33%"></div>
+                <!-- FORM -->
+                <form id="apeks-form" action="https://formspree.io/f/xvzzynwj" method="POST">
+                    <input type="hidden" name="_subject" value="New OFM Application">
+                    <input type="hidden" name="_redirect" value="#success-message">
+
+                    <!-- Step 1 -->
+                    <div id="step-1" class="space-y-8 md:space-y-10">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <div>
+                                <label class="form-label-elite">First Name</label>
+                                <input type="text" name="first_name" required class="input-elite" placeholder="Jane">
+                            </div>
+                            <div>
+                                <label class="form-label-elite">Last Name</label>
+                                <input type="text" name="last_name" required class="input-elite" placeholder="Doe">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="form-label-elite">Country of Residence</label>
+                            <input type="text" name="country" required class="input-elite" placeholder="United States">
+                        </div>
+                        <div>
+                            <label class="form-label-elite">OnlyFans Account URL</label>
+                            <input type="url" name="onlyfans_url" class="input-elite" placeholder="onlyfans.com/yourprofile">
+                        </div>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <div>
+                                <label class="form-label-elite">Instagram</label>
+                                <input type="text" name="instagram" required class="input-elite" placeholder="@username">
+                            </div>
+                            <div>
+                                <label class="form-label-elite">TikTok</label>
+                                <input type="text" name="tiktok" required class="input-elite" placeholder="@username">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="form-label-elite">Email Address</label>
+                            <input type="email" name="email" required class="input-elite" placeholder="jane@example.com">
+                        </div>
+                        <button type="button" onclick="nextStep(2)" class="w-full bg-black text-white py-6 md:py-7 font-black uppercase tracking-[0.25em] hover:bg-violet-950 transition-colors text-base md:text-lg">Continue Application</button>
                     </div>
 
-                    <form id="apeks-form" action="https://formspree.io/f/xvzzynwj" method="POST">
-                        <!-- Step 1: Basics -->
-                        <div id="step-1" class="space-y-8 md:space-y-10">
-                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                                <div>
-                                    <label class="form-label-elite">First Name</label>
-                                    <input type="text" name="first_name" required class="input-elite" placeholder="Jane">
-                                </div>
-                                <div>
-                                    <label class="form-label-elite">Last Name</label>
-                                    <input type="text" name="last_name" required class="input-elite" placeholder="Doe">
-                                </div>
-                            </div>
-                            <div>
-                                <label class="form-label-elite">Country of Residence</label>
-                                <input type="text" name="country" required class="input-elite" placeholder="United States">
-                            </div>
-                            <div>
-                                <label class="form-label-elite">OnlyFans Account URL</label>
-                                <input type="url" name="onlyfans_url" class="input-elite" placeholder="onlyfans.com/yourprofile">
-                            </div>
-                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                                <div>
-                                    <label class="form-label-elite">Instagram</label>
-                                    <input type="text" name="instagram" required class="input-elite" placeholder="@username">
-                                </div>
-                                <div>
-                                    <label class="form-label-elite">TikTok</label>
-                                    <input type="text" name="iikiok" required class="input-elite" placeholder="@username">
-                                </div>
-                            </div>
-                            <div>
-                                <label class="form-label-elite">Email Address</label>
-                                <input type="email" name="email" required class="input-elite" placeholder="jane@example.com">
-                            </div>
-                            <button type="button" onclick="nextStep(2)" class="w-full bg-black text-white py-6 md:py-7 font-black uppercase tracking-[0.25em] hover:bg-violet-950 transition-colors text-base md:text-lg">Continue Application</button>
+                    <!-- Step 2 -->
+                    <div id="step-2" class="step-hidden space-y-8 md:space-y-10">
+                        <div>
+                            <label class="form-label-elite">Are you currently on OnlyFans?</label>
+                            <select name="status" required class="input-elite bg-white">
+                                <option value="Active">Yes, I am currently active</option>
+                                <option value="Starting">No, I am just starting out</option>
+                                <option value="Returning">I have an account but am not active</option>
+                            </select>
                         </div>
-
-                        <!-- Step 2: Content & Earnings -->
-                        <div id="step-2" class="step-hidden space-y-8 md:space-y-10">
-                            <div>
-                                <label class="form-label-elite">Are you currently on OnlyFans?</label>
-                                <select name="Status" required class="input-elite bg-white">
-                                    <option value="Active">Yes, I am currently active</option>
-                                    <option value="Starting">No, I am just starting out</option>
-                                    <option value="Returning">I have an account but am not active</option>
-                                </select>
-                            </div>
-                            <div>
-                                <label class="form-label-elite">Current Monthly Revenue (Est.)</label>
-                                <select name="Earnings" class="input-elite bg-white">
-                                    <option value="0-500">$0 - $500</option>
-                                    <option value="500-2k">$500 - $2,000</option>
-                                    <option value="2k-5k">$2,000 - $5,000</option>
-                                    <option value="5k-15k">$5,000 - $15,000</option>
-                                    <option value="15k+">$15,000+</option>
-                                </select>
-                            </div>
-                            <div class="flex flex-col sm:flex-row gap-6">
-                                <button type="button" onclick="nextStep(1)" class="w-full sm:w-1/3 border border-gray-200 py-6 font-black uppercase tracking-[0.2em] hover:bg-gray-50 transition-colors text-sm">Back</button>
-                                <button type="button" onclick="nextStep(3)" class="w-full sm:w-2/3 bg-black text-white py-6 font-black uppercase tracking-[0.25em] hover:bg-violet-950 transition-colors text-base">Almost Finished</button>
-                            </div>
+                        <div>
+                            <label class="form-label-elite">Current Monthly Revenue (Est.)</label>
+                            <select name="earnings" class="input-elite bg-white">
+                                <option value="0-500">$0 - $500</option>
+                                <option value="500-2k">$500 - $2,000</option>
+                                <option value="2k-5k">$2,000 - $5,000</option>
+                                <option value="5k-15k">$5,000 - $15,000</option>
+                                <option value="15k+">$15,000+</option>
+                            </select>
                         </div>
-
-                        <!-- Step 3: Goals -->
-                        <div id="step-3" class="step-hidden space-y-8 md:space-y-10">
-                            <div>
-                                <label class="form-label-elite">What is your primary goal right now?</label>
-                                <textarea name="Primary Goal" rows="4" class="input-elite" placeholder="Scale income, save time..."></textarea>
-                            </div>
-                            <div class="flex items-start gap-4 py-4">
-                                <input type="checkbox" id="nda" name="terms_agreed" required class="w-6 h-6 accent-black mt-1">
-                                <label for="nda" class="text-xs md:text-sm font-bold text-gray-500 uppercase tracking-widest leading-relaxed">I understand my application is private and non-binding</label>
-                            </div>
-                            <div class="flex flex-col sm:flex-row gap-6">
-                                <button type="button" onclick="nextStep(2)" class="w-full sm:w-1/3 border border-gray-200 py-6 font-black uppercase tracking-[0.2em] hover:bg-gray-50 transition-colors text-sm">Back</button>
-                                <button type="submit" id="submit-btn" class="w-full sm:w-2/3 bg-black text-white py-6 font-black uppercase tracking-[0.25em] hover:bg-violet-950 transition-colors flex items-center justify-center gap-5 text-base">
-                                    <span id="btn-text">Submit Application</span>
-                                    <div id="loader" class="hidden w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
-                                </button>
-                            </div>
+                        <div class="flex flex-col sm:flex-row gap-6">
+                            <button type="button" onclick="nextStep(1)" class="w-full sm:w-1/3 border border-gray-200 py-6 font-black uppercase tracking-[0.2em] hover:bg-gray-50 transition-colors text-sm">Back</button>
+                            <button type="button" onclick="nextStep(3)" class="w-full sm:w-2/3 bg-black text-white py-6 font-black uppercase tracking-[0.25em] hover:bg-violet-950 transition-colors text-base">Almost Finished</button>
                         </div>
-                    </form>
-                </div>
-            </div>
+                    </div>
 
-            <!-- Success Message -->
-            <div id="success-message" class="hidden text-center py-24">
-                <div class="inline-flex items-center justify-center w-20 h-20 bg-violet-100 rounded-full mb-10">
-                    <svg class="w-10 h-10 text-violet-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                </div>
-                <h2 class="text-4xl md:text-6xl font-black mb-8 heading-font">Application Received</h2>
-                <p class="text-gray-500 max-w-lg mx-auto leading-relaxed text-lg">Our team will review your application and reach out via email within 24-48 hours if you're a fit for the roster.</p>
-                <button onclick="window.location.reload()" class="mt-14 text-xs font-black uppercase tracking-[0.4em] border-b border-black pb-3">Return to Home</button>
+                    <!-- Step 3 -->
+                    <div id="step-3" class="step-hidden space-y-8 md:space-y-10">
+                        <div>
+                            <label class="form-label-elite">What is your primary goal right now?</label>
+                            <textarea name="primary_goal" rows="4" class="input-elite" placeholder="Scale income, save time..."></textarea>
+                        </div>
+                        <div class="flex items-start gap-4 py-4">
+                            <input type="checkbox" id="nda" name="terms_agreed" required class="w-6 h-6 accent-black mt-1">
+                            <label for="nda" class="text-xs md:text-sm font-bold text-gray-500 uppercase tracking-widest leading-relaxed">I understand my application is private and non-binding</label>
+                        </div>
+                        <div class="flex flex-col sm:flex-row gap-6">
+                            <button type="button" onclick="nextStep(2)" class="w-full sm:w-1/3 border border-gray-200 py-6 font-black uppercase tracking-[0.2em] hover:bg-gray-50 transition-colors text-sm">Back</button>
+                            <button type="submit" id="submit-btn" class="w-full sm:w-2/3 bg-black text-white py-6 font-black uppercase tracking-[0.25em] hover:bg-violet-950 transition-colors flex items-center justify-center gap-5 text-base">
+                                <span id="btn-text">Submit Application</span>
+                                <div id="loader" class="hidden w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                            </button>
+                        </div>
+                    </div>
+                </form>
             </div>
         </div>
-    </section>
 
+        <!-- Success Message -->
+        <div id="success-message" class="hidden text-center py-24">
+            <div class="inline-flex items-center justify-center w-20 h-20 bg-violet-100 rounded-full mb-10">
+                <svg class="w-10 h-10 text-violet-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+            </div>
+            <h2 class="text-4xl md:text-6xl font-black mb-8 heading-font">Application Received</h2>
+            <p class="text-gray-500 max-w-lg mx-auto leading-relaxed text-lg">Our team will review your application and reach out via email within 24-48 hours if you're a fit for the roster.</p>
+            <button onclick="window.location.reload()" class="mt-14 text-xs font-black uppercase tracking-[0.4em] border-b border-black pb-3">Return to Home</button>
+        </div>
+    </div>
+</section>
+
+<script>
+    // 1️⃣ Sauvegarde l'état original des champs required
+    document.querySelectorAll("#apeks-form input, #apeks-form select, #apeks-form textarea").forEach(el => {
+        el.dataset.originalRequired = el.required;
+    });
+
+    // 2️⃣ Fonction pour activer/désactiver required selon la step
+    function toggleRequired(stepId) {
+        document.querySelectorAll("#apeks-form input, #apeks-form select, #apeks-form textarea").forEach(el => {
+            if(el.closest(`#${stepId}`)) {
+                if(el.dataset.originalRequired === "true") el.required = true;
+            } else {
+                el.required = false;
+            }
+        });
+    }
+
+    // 3️⃣ Fonction pour changer de step
+    function nextStep(step) {
+        // Masquer toutes les steps
+        document.querySelectorAll("#apeks-form > div[id^='step-']").forEach(el => el.classList.add("step-hidden"));
+
+        // Afficher la step demandée
+        const currentStep = document.querySelector(`#step-${step}`);
+        if(currentStep) currentStep.classList.remove("step-hidden");
+
+        // Mettre à jour la barre de progression
+        const progress = document.getElementById("form-progress");
+        if(progress) progress.style.width = `${step * 33}%`;
+
+        // Activer/désactiver required
+        toggleRequired(`step-${step}`);
+    }
+
+    // 4️⃣ Gérer le submit avec message de succès
+    document.getElementById("apeks-form").addEventListener("submit", function(e){
+        e.preventDefault(); // Empêche le reload
+
+        const form = e.target;
+        const loader = document.getElementById("loader");
+        const btnText = document.getElementById("btn-text");
+
+        loader.classList.remove("hidden");
+        btnText.textContent = "Submitting...";
+
+        fetch(form.action, {
+            method: "POST",
+            body: new FormData(form),
+            headers: { 'Accept': 'application/json' }
+        }).then(response => {
+            loader.classList.add("hidden");
+            btnText.textContent = "Submit Application";
+            if (response.ok) {
+                form.classList.add("hidden");
+                document.getElementById("success-message").classList.remove("hidden");
+            } else {
+                alert("Oops! There was a problem submitting your form.");
+            }
+        }).catch(() => {
+            loader.classList.add("hidden");
+            btnText.textContent = "Submit Application";
+            alert("Oops! There was a problem submitting your form.");
+        });
+    });
+
+    // 5️⃣ Initialiser la step 1 required
+    toggleRequired("step-1");
+</script>
+    
     <!-- FOOTER -->
     <footer class="py-16 md:py-20 px-6 flex flex-col items-center bg-black text-gray-600 text-[11px] md:text-xs uppercase tracking-[0.4em] font-bold border-t border-white/5">
         <div class="heading-font font-black italic text-3xl mb-10 brand-glow">APEKS</div>
         <p class="text-center">© 2024 Apeks Management Agency. Private & Confidential.</p>
     </footer>
-
-    <script>
-        function toggleFaq(button) {
-            const item = button.parentElement;
-            const isActive = item.classList.contains('active');
-            document.querySelectorAll('.faq-item').forEach(el => el.classList.remove('active'));
-            if (!isActive) {
-                item.classList.add('active');
-            }
-        }
-
-        let currentStep = 1;
-        const progressBar = document.getElementById('form-progress');
-
-        function nextStep(step) {
-            if (step > currentStep) {
-                const currentInputs = document.querySelectorAll(`#step-${currentStep} input[required], #step-${currentStep} select[required]`);
-                let valid = true;
-                currentInputs.forEach(input => {
-                    if (!input.value) {
-                        input.style.borderColor = 'red';
-                        valid = false;
-                    } else {
-                        input.style.borderColor = '#e5e7eb';
-                    }
-                });
-                if (!valid) return;
-            }
-
-            document.querySelectorAll('[id^="step-"]').forEach(el => el.classList.add('step-hidden'));
-            document.getElementById(`step-${step}`).classList.remove('step-hidden');
-            
-            currentStep = step;
-            const progress = (step / 3) * 100;
-            progressBar.style.width = `${progress}%`;
-            
-            const target = document.getElementById('apply');
-            const offset = 80;
-            const bodyRect = document.body.getBoundingClientRect().top;
-            const elementRect = target.getBoundingClientRect().top;
-            const elementPosition = elementRect - bodyRect;
-            const offsetPosition = elementPosition - offset;
-
-            window.scrollTo({
-                top: offsetPosition,
-                behavior: 'smooth'
-            });
-        }
-
-        const form = document.getElementById('apeks-form');
-        form.addEventListener('submit', async function(e) {
-            e.preventDefault();
-            
-            const submitBtn = document.getElementById('submit-btn');
-            const btnText = document.getElementById('btn-text');
-            const loader = document.getElementById('loader');
-            const container = document.getElementById('application-container');
-            const successMsg = document.getElementById('success-message');
-
-            submitBtn.disabled = true;
-            btnText.textContent = "Sending...";
-            loader.classList.remove('hidden');
-
-            const data = new FormData(form);
-            
-            try {
-                const response = await fetch(form.action, {
-                    method: "POST",
-                    body: data,
-                    headers: { 'Accept': 'application/json' }
-                });
-
-                if (response.ok) {
-                    container.classList.add('opacity-0');
-                    setTimeout(() => {
-                        container.style.display = 'none';
-                        successMsg.classList.remove('hidden');
-                        window.scrollTo({ top: document.getElementById('apply').offsetTop - 80, behavior: 'smooth' });
-                    }, 500);
-                } else {
-                    throw new Error();
-                }
-            } catch (error) {
-                alert("Submission failed. Please try again.");
-                submitBtn.disabled = false;
-                btnText.textContent = "Submit Application";
-                loader.classList.add('hidden');
-            }
-        });
-    </script>
 </body>
 </html>
