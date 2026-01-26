@@ -80,7 +80,6 @@ document.addEventListener('DOMContentLoaded', () => \{\
 \
     if (apeksForm) \{\
         apeksForm.addEventListener('submit', async (event) => \{\
-            event.preventDefault();\
             \
             // Collect Form Data\
             const formData = new FormData(apeksForm);\
